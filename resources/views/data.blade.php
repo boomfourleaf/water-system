@@ -62,10 +62,11 @@ function submitForm {
   var mins = new Date().getMinutes();
   if(mins == "00" && isCalled != true){
     // 11.00 = true, 12.00 = true, 13.00 = true
+    // พอขึ้นชั่วโมงใหม่ รันอะไรบ้าง เรียกในนี้
     $('form').submit();
     isCalled = true
-  } else {
-    isCalled = true
+  } else if (mins != "00") {
+    isCalled = false
   }
 }
 
