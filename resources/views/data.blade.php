@@ -57,6 +57,21 @@ $( function() {
   } );
 
 
+var isCalled = false
+function submitForm {
+  var mins = new Date().getMinutes();
+  if(mins == "00" && isCalled != true){
+    // 11.00 = true, 12.00 = true, 13.00 = true
+    $('form').submit();
+    isCalled = true
+  } else {
+    isCalled = true
+  }
+}
+
+setInterval(function() { submitForm(); }, 1000);
+
+
  // Set the date we're counting down to
 var countDownDate = new Date("09/18/2017 14:19:25").getTime();
 // Update the count down every 1 second
